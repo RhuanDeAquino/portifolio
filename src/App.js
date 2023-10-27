@@ -1,24 +1,68 @@
-import logo from './logo.svg';
+import styled from 'styled-components';
 import './App.css';
+import Home from './components/Home';
+import Slide from "./components/Slide";
+import More from './components/More';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Form from './components/Form';
+import { useState } from 'react';
 
-function App() {
+const Content = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+`
+
+const BoxContent = styled.div`
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: ${(props) => props.darkMode ? 'var(--body-color)' : 'var(--body-color-dark)'};
+
+  > main {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: ${(props) => props.darkMode ? 'var(--body-color)' : 'var(--body-color-dark)'};
+
+  @media(max-width: 1024px) {
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  @media(max-width: 500px) {
+    padding: 0 1rem;
+  }
+}
+`
+
+const App = () => {
+  const [darkMode, setDarkMode] = useState(true);
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Content>
+      <BoxContent darkMode={darkMode}>
+        <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        <Home darkMode={darkMode} />
+        <main>
+          <Slide darkMode={darkMode} />
+          <More darkMode={darkMode} />
+          <Form darkMode={darkMode} />
+        </main>
+        <Footer darkMode={darkMode} />
+      </BoxContent>
+    </Content>
   );
 }
 

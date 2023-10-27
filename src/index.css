@@ -1,13 +1,55 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&family=Sedgwick+Ave+Display&family=Teko:wght@300&family=Ubuntu+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@700&display=swap');
+
+:root {
+  --body-color: #fff;
+  --body-color-dark: #000;
+
+  --text-color: #000;
+  --text-color-dark: white;
+
+  --tran-03: all 0.4s;
+  --tran-03: all 0.3s;
+  --tran-04: all 0.2s;
+  --tran-05: all 0.4s;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  font-family: 'Pixelify Sans', cursive;
+  width: 100%;
+}
+
+h2 {
+  font-family: 'Pixelify Sans', cursive;
+  width: 100%;
+}
+
+h3 {
+  font-family: 'Pixelify Sans', cursive;
+  width: 100%;
+}
+
+h4 {
+  font-family: 'Pixelify Sans', cursive;
+  width: 100%;
+}
+
+p {
+  font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+li {
+  font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+a {
+  font-family: 'Pixelify Sans', cursive;
+  width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
