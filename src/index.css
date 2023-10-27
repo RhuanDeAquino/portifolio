@@ -2,15 +2,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@700&display=swap');
 
 :root {
-  --body-color: #fff;
-  --body-color-dark: #000;
+  --body-color: #F2F2F2;
+  --body-color-dark: #0D0D0D;
+  --text-color: #0D0D0D;
+  --text-color-dark: #F2F2F2;
+  --hover-color: #FF1E00;
+  --hover-color-dark: #242426;
+  --slider-color: #007aff;
+  --card-exp-color: #007aff;
+  --card-exp-color-dark: #F2F2F2;
 
-  --text-color: #000;
-  --text-color-dark: white;
+  --red-miles: #B22512;
 
-  --tran-03: all 0.4s;
-  --tran-03: all 0.3s;
-  --tran-04: all 0.2s;
+  --red-peter: #FF1E00;
+  --blue-peter: #094DB2;
+
+  --tran-02: all 0.1s;
+  --tran-03: all 0.2s;
+  --tran-04: all 0.3s;
   --tran-05: all 0.4s;
 }
 

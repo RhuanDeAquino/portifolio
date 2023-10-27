@@ -19,7 +19,7 @@ const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: ${(props) => `url(${!props.darkMode ? WallpeaperMiles : Wallpeaperpeter})`};
+  background-image: ${(props) => `url(${props.darkMode ? WallpeaperMiles : Wallpeaperpeter})`};
   background-size: 100%;
   background-position-y: 33%;
   margin-bottom: 10rem;
@@ -40,7 +40,7 @@ const Content = styled.div`
   }
 
   @media(max-width: 1024px) {
-  background-image: ${(props) => `url(${!props.darkMode ? WallpeaperMilesMobile : WallpeaperPeterMobile})`};
+  background-image: ${(props) => `url(${props.darkMode ? WallpeaperMilesMobile : WallpeaperPeterMobile})`};
   background-position-y: 0;
   background-size: 100%;
   height: 100vh;
@@ -56,7 +56,7 @@ const Opacity = styled.div`
   align-items: center;
   justify-content: center;
   background-position: cover;
-  background-color: #00000090;
+  background-color: #0D0D0D99;
 `;
 
 const BoxContent = styled.div`
@@ -133,7 +133,7 @@ const Home = ({ darkMode }) => {
           </BoxMore>
         </BoxContent>
       </Opacity>
-      <img src={!darkMode ? GifMiles : GifPeter} alt="gif" />
+      <img src={darkMode ? GifMiles : GifPeter} alt="gif" />
     </Content>
   );
 };

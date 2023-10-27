@@ -13,7 +13,7 @@ const Header = styled.header`
   top: 0;
   z-index: 999; 
   background-size: 100%;
-  background: ${(props) => !props.darkMode ? 'black' : 'white'};
+  background: ${(props) => props.darkMode ? 'var(--body-color-dark)' : 'var(--body-color)'};
 `
 
 const HeaderContainerDesk = styled.div`
@@ -22,6 +22,10 @@ const HeaderContainerDesk = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media(max-width: 1024px) {
+  width: 97%;
+  }
 
   @media(max-width: 900px) {
     display: none;
@@ -35,11 +39,11 @@ const Logo = styled.img`
 
 const Menu = styled.nav`
   display: flex;
-  color: ${(props) => props.darkMode ? 'red' : '#242426'};
+  color: ${(props) => props.darkMode ? 'var(--red-miles)' : 'var(--blue-peter)'};
 
   :hover {
-    transition: 0.5s;
-    background: ${(props) => props.darkMode ? 'red' : '#242426'};
+    transition:  var(--tran-04);
+    background: ${(props) => props.darkMode ? 'var(--hover-color-dark)' : 'var(--hover-color)'};
     border-radius: 12px;
     animation: flutterButton 1s;
 
@@ -53,26 +57,23 @@ const Menu = styled.nav`
 }
 
 a:visited {
-  color: ${(props) => props.darkMode ? '#007aff' : 'red'};
+  color: ${(props) => props.darkMode ? 'var(--red-miles)' : 'var(--blue-peter)'};
 }
 `
 const ItemMenu = styled.a`
   text-decoration: none;
   padding: 1rem;
   font-size: 1.2rem;
-  margin: 0 0.5rem;
   width: auto;
   cursor: pointer;
 
   @media(max-width: 900px) {
-    color: red;
     width: 95%;
     border-radius: 15px;
-    border: 5px solid red;
     margin-bottom: 1rem;
     margin: 0 0 0.5rem 0;
     font-weight: 600;
-    background: ${(props) => props.darkMode ? '#007aff' : 'black'};
+    color: ${(props) => props.darkMode ? 'var(--red-miles)' : 'var(--blue-peter)'};
   }
 `
 
@@ -82,11 +83,11 @@ const Toggle = styled.div`
   height: 35px;
   border-radius: 15px;
   position: relative;
-  background: ${(props) => props.darkMode ? 'white' : 'black'};
+  background: ${(props) => props.darkMode ? '#F2F2F2' : '#0D0D0D'};
   display: flex;
   align-items: center;
   transition: var(--tran-04);
-  box-shadow: black 0 0 10px 0;
+  box-shadow: #0D0D0D 0 0 10px 0;
   border: 0;
 
   @media(max-width: 900px) {
@@ -96,7 +97,7 @@ const Toggle = styled.div`
   > div {
     width: 30px;
     height: 30px;
-    background: ${(props) => props.darkMode ? 'black' : 'white'};
+    background: ${(props) => props.darkMode ? '#0D0D0D' : '#F2F2F2'};
     position: absolute;
     left: ${(props) => props.darkMode ? '3px' : '45%'};
     border-radius: 50%;
@@ -131,7 +132,7 @@ const NavMobile = styled.nav`
     top: 10vh;
     width: 100%;
     height: 100vh;
-    background: ${(props) => props.darkMode ? 'black' : 'white'};
+    background: ${(props) => props.darkMode ? '#0D0D0D' : '#F2F2F2'};
 
     animation: openMenuMobile 0.5s;
 
@@ -170,6 +171,9 @@ const HeaderComponent = ({ darkMode, toggleDarkMode }) => {
           <ItemMenu href='#experiencias'>
             Experiências
           </ItemMenu>
+          <ItemMenu darkMode={darkMode} href='#projetos' onClick={() => setOpenNav(false)}>
+            Projetos
+          </ItemMenu>
           <ItemMenu href="#fale_comigo">
             Fale Comigo
           </ItemMenu>
@@ -177,23 +181,26 @@ const HeaderComponent = ({ darkMode, toggleDarkMode }) => {
             Contato
           </ItemMenu>
         </Menu>
-        <Toggle onClick={() => toggleDarkMode()} darkMode={!darkMode}>
+        <Toggle onClick={() => toggleDarkMode()} darkMode={darkMode}>
           <div />
         </Toggle>
       </HeaderContainerDesk>
       <HeaderMobile>
         <Logo src={LogoImg} />
-        <Button onClick={() => setOpenNav(!openNav)} darkMode={!darkMode}>
+        <Button onClick={() => setOpenNav(!openNav)} darkMode={darkMode}>
           <i className='bx bx-menu'></i>
         </Button>
       </HeaderMobile>
       {openNav &&
-        (<NavMobile darkMode={!darkMode}>
+        (<NavMobile darkMode={darkMode}>
           <ItemMenu darkMode={darkMode} href='#conhecimentos' onClick={() => setOpenNav(false)}>
             Conhecimentos
           </ItemMenu>
           <ItemMenu darkMode={darkMode} href='#experiencias' onClick={() => setOpenNav(false)}>
             Experiências
+          </ItemMenu>
+          <ItemMenu darkMode={darkMode} href='#projetos' onClick={() => setOpenNav(false)}>
+            Projetos
           </ItemMenu>
           <ItemMenu darkMode={darkMode} href='#fale_comigo' onClick={() => setOpenNav(false)}>
             Fale Comigo
@@ -201,7 +208,7 @@ const HeaderComponent = ({ darkMode, toggleDarkMode }) => {
           <ItemMenu darkMode={darkMode} href="#contato" onClick={() => setOpenNav(false)}>
             Contato
           </ItemMenu>
-          <Toggle onClick={() => toggleDarkMode()} darkMode={!darkMode}>
+          <Toggle onClick={() => toggleDarkMode()} darkMode={darkMode}>
             <div />
           </Toggle>
         </NavMobile>)

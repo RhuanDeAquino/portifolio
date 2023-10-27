@@ -50,7 +50,7 @@ margin-top: 5rem;
   width: 100%;
 }
 .swiper-pagination-bullet {
-  background: red !important;
+  background: ${(props) => (!props.darkMode ? 'var(--red-miles)' : 'var(--blue-peter)')};
 }
 `
 
@@ -104,8 +104,8 @@ const Carrosel = ({ darkMode }) => {
 
   return (
     <Content darkMode={darkMode} id='conhecimentos'>
-      <TitleComponent darkMode={!darkMode}>Conhecimentos:</TitleComponent>
-      <Box>
+      <TitleComponent darkMode={darkMode}>Conhecimentos:</TitleComponent>
+      <Box darkMode={darkMode}>
         <Swiper
           direction={'vertical'}
           pagination={{
@@ -121,7 +121,7 @@ const Carrosel = ({ darkMode }) => {
           {items.map((item) => {
             return (
               <SwiperSlide key={item.id}>
-                <CardComponent Image={item.image} Title={item.name} Description={item.description} />
+                <CardComponent Image={item.image} Title={item.name} Description={item.description} darkMode={darkMode} />
               </SwiperSlide>
             )
           })}

@@ -14,7 +14,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: ${(props) => `url(${props.darkMode ? GifFooterPeter : GifFooterMiles})`};
+  background-image: ${(props) => `url(${props.darkMode ? GifFooterMiles : GifFooterPeter})`};
   background-position-y: 33%;
   background-size: 100%;
   background-position: cover;
@@ -47,7 +47,7 @@ const Opacity = styled.div`
   align-items: center;
   justify-content: center;
   background-position: cover;
-  background-color: #00000090;
+  background-color: #0D0D0D95;
 `;
 
 const BoxContent = styled.div`
@@ -64,7 +64,7 @@ const BoxContent = styled.div`
   }
 
   >p {
-    color: #fff;
+    color: var(--text-color-dark);
     font-weight: 600;
   }
 `
@@ -85,19 +85,19 @@ const BoxIcons = styled.div`
    color: ${(props) => props.darkMode ? 'var(--text-color-dark)' : 'var(--text-color)'};
 
     :hover {
-      color: #007aff;
+      color: ${(props) => props.darkMode ? 'var(--hover-color-dark)' : 'var(--hover-color)'};
       transition: 0.5s;
     }
     > i {
+      color: #F2F2F2;
       font-size: 3rem;
-      color: #fff;;
   }
 }
 `
 const Footer = ({ darkMode }) => {
   return (
     <Content darkMode={darkMode} id="contato">
-      <img src={!darkMode ? MilesLogo : PeterLogo} alt="gif" />
+      <img src={darkMode ? MilesLogo : PeterLogo} alt="gif" />
       <Opacity>
         <BoxContent darkMode={darkMode}>
           <TitleComponent darkMode={true}>Contato</TitleComponent>

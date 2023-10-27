@@ -45,8 +45,8 @@ const BoxCard = styled.div`
   justify-content: center;
   text-align: center;
   gap: 10px;
-  background: linear-gradient(-45deg, #007aff 30%, #007aff 100% );
-  box-shadow: 1px 0 10px #007aff;
+  background-color: ${(props) => (props.darkMode ? 'var(--red-miles)' : 'var(--blue-peter)')};
+  box-shadow: ${(props) => (props.darkMode ? '1px 0 10px var(--red-miles)' : '3px 0 10px var(--red-peter)')};
   color: #e8e8e8;
   padding: 20px;
   line-height: 1.5;
@@ -74,9 +74,9 @@ const BoxCard = styled.div`
 }
 `
 
-const CardComponent = ({ Image, Title, Description }) => {
+const CardComponent = ({ Image, Title, Description, darkMode }) => {
   return (
-    <BoxCard>
+    <BoxCard darkMode={darkMode}>
       <div className="card">
         <div className="front-content">
           <img src={Image} alt='aa' />

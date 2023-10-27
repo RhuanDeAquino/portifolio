@@ -8,9 +8,9 @@ const Container = styled.div`
   margin-bottom: 8rem;
   border-radius: 15px;
   position: relative;
-  box-shadow: ${(props) => (props.darkMode ? '1px 0 10px #007aff' : '1px 0 10px #fff')};;
   border-radius: 5px 40px 6px 40px;
-  background-color: ${(props) => (props.darkMode ? '#007aff' : 'var(--text-color-dark)')};
+  box-shadow: ${(props) => (props.darkMode ? '1px 0 10px var(--card-exp-color-dark)' : '1px 0 10px var(--blue-peter)')};;
+  background-color: ${(props) => (props.darkMode ? 'var(--card-exp-color-dark)' : 'var(--blue-peter)')};;
   transition: var(--tran-04);
 `;
 
@@ -21,8 +21,9 @@ border-radius: 50%;
 position: absolute;
 top: -5rem;
 padding: 1rem;
-background-color: ${(props) => (props.darkMode ? '#007aff' : 'var(--text-color-dark)')};
-box-shadow: ${(props) => (props.darkMode ? '1px 0 10px #007aff' : '1px 0 10px #fff')};;
+box-shadow: ${(props) => (props.darkMode ? '1px 0 10px var(--card-exp-color-dark)' : '1px 0 10px var(--blue-peter)')};;
+background-color: ${(props) => (props.darkMode ? 'var(--card-exp-color-dark)' : 'var(--blue-peter)')};;
+transition: var(--tran-04);
   
   > img {
   width: 100%;
@@ -45,7 +46,7 @@ width: auto;
 
 const TitleCard = styled.h2`
 width: 350px;
-color: ${(props) => (props.darkMode ? 'var(--text-color-dark)' : 'var(--text-color)')};
+color: ${(props) => (!props.darkMode ? 'var(--text-color-dark)' : 'var(--text-color)')};
 
 @media(max-width: 1024px) {
   font-size: 1.2rem;
@@ -55,27 +56,27 @@ color: ${(props) => (props.darkMode ? 'var(--text-color-dark)' : 'var(--text-col
 
 const ResponsibilitiesTitle = styled.h4`
 margin-top: 1rem;
-color: ${(props) => (props.darkMode ? 'var(--text-color-dark)' : 'var(--text-color)')};
+color: ${(props) => (!props.darkMode ? 'var(--text-color-dark)' : 'var(--text-color)')};
 `;
 
 const List = styled.ul`
 margin-top: 1rem;
 list-style: none;
-color: ${(props) => (props.darkMode ? 'var(--text-color-dark)' : 'var(--text-color)')};
+color: ${(props) => (!props.darkMode ? 'var(--text-color-dark)' : 'var(--text-color)')};
 `;
 
 const ListItem = styled.li`
-color: ${(props) => (props.darkMode ? 'var(--text-color-dark)' : 'var(--text-color)')};
+color: ${(props) => (!props.darkMode ? 'var(--text-color-dark)' : 'var(--text-color)')};
 transition: var(--tran-04);
 
 `;
 
 const ProjectsTitle = styled.h4`
-color: ${(props) => (props.darkMode ? 'var(--text-color-dark)' : 'var(--text-color)')};
+color: ${(props) => (!props.darkMode ? 'var(--text-color-dark)' : 'var(--text-color)')};
 `;
 
 const TextCard = styled.p`
-color: ${(props) => (props.darkMode ? 'var(--text-color-dark)' : 'var(--text-color)')};
+color: ${(props) => (!props.darkMode ? 'var(--text-color-dark)' : 'var(--text-color)')};
 `;
 
 const CardTec = ({ darkMode, Image, Title, ListResposabilits, MoreExp, PrejectsLists }) => {

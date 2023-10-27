@@ -95,8 +95,8 @@ const More = ({ darkMode }) => {
 
   return (
     <Content darkMode={darkMode} id='experiencias'>
-      <img src={!darkMode ? GifMiles : GifPeter} alt="gif" />
-      <TitleComponent darkMode={!darkMode}>Sobre minhas experiências</TitleComponent>
+      <img src={darkMode ? GifMiles : GifPeter} alt="gif" />
+      <TitleComponent darkMode={darkMode}>Sobre minhas experiências</TitleComponent>
       <BoxContent darkMode={darkMode}>
         {experiences.map((item, index) => (
           <CardExp

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import TitleComponent from '../Title';
+import TextComponent from '../Text';
 import emailjs from '@emailjs/browser';
 
 import Image from "../../assets/spiders-man-email-send.jpg";
@@ -32,7 +33,7 @@ const Content = styled.section`
   border-bottom: 2px solid #9b9b9b;
   outline: 0;
   font-size: 17px;
-  color: ${(props) => props.darkMode ? '#007aff' : 'red'};
+  color: ${(props) => props.darkMode ? 'var(--red-miles)' : 'var(--blue-peter)'};
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
@@ -46,7 +47,7 @@ const Content = styled.section`
   border-bottom: 2px solid #9b9b9b;
   outline: 0;
   font-size: 17px;
-  color: ${(props) => props.darkMode ? '#007aff' : 'red'};
+  color: ${(props) => props.darkMode ? 'var(--red-miles)' : 'var(--blue-peter)'};
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
@@ -79,7 +80,7 @@ input:-internal-autofill-selected {
   transition: 0.2s;
   font-size: 17px;
   pointer-events: none;
-  color: red;
+  color:  #c50b0c;;
 
 }
 
@@ -87,7 +88,7 @@ input:-internal-autofill-selected {
   padding-bottom: 6px;
   font-weight: 700;
   border-width: 5px;
-  border-image: ${(props) => props.darkMode ? 'linear-gradient(to right, #007aff, red)' : 'linear-gradient(to right, red, #242426)'};
+  border-image: ${(props) => props.darkMode ? 'linear-gradient(to right, var(--red-miles),  var(--hover-color-dark))' : 'linear-gradient(to right,  var(--blue-peter), var(--red-peter))'};
   border-image-slice: 1;
 }
 
@@ -95,7 +96,7 @@ input:-internal-autofill-selected {
   padding-bottom: 6px;
   font-weight: 700;
   border-width: 5px;
-  border-image: ${(props) => props.darkMode ? 'linear-gradient(to right, #007aff, red)' : 'linear-gradient(to right, red, #242426)'};
+  border-image: ${(props) => props.darkMode ? 'linear-gradient(to right, var(--red-miles),  var(--hover-color-dark))' : 'linear-gradient(to right,  var(--blue-peter), var(--red-peter))'};
   border-image-slice: 1;
 }
 
@@ -105,7 +106,7 @@ input:-internal-autofill-selected {
   display: block;
   transition: 0.2s;
   font-size: 17px;
-  color: red;
+  color:  #c50b0c;;
   font-weight: 700;
 }
 
@@ -115,7 +116,7 @@ input:-internal-autofill-selected {
   display: block;
   transition: 0.2s;
   font-size: 17px;
-  color: red;
+  color:  #c50b0c;;
   font-weight: 700;
 }
 
@@ -131,8 +132,8 @@ input:-internal-autofill-selected {
  border: none;
  font-family: inherit;
  font-weight: 500;
- color: #fff;
- background-color: ${(props) => props.darkMode ? '#007aff' : 'red'};
+ color: #F2F2F2;
+ background-color: ${(props) => props.darkMode ? 'var(--red-miles)' : 'var(--blue-peter)'};
  width: 180px;
  
 }
@@ -161,7 +162,7 @@ input:-internal-autofill-selected {
 }
 
 .btn::after {
-  background-color: ${(props) => props.darkMode ? '#007aff' : 'red'};
+  background-color: ${(props) => props.darkMode ? '#007aff' : ' #c50b0c;'};
 }
 
 .btn:hover::after {
@@ -189,7 +190,7 @@ const BoxSucess = styled.div`
 const ImageSucess = styled.img`
   width: 100%;
   margin-bottom: 2rem;
-  background: red;
+  background:  #c50b0c;;
 `
 
 const TextSuccess = styled.p`
@@ -257,7 +258,9 @@ const Form = ({ darkMode }) => {
         </BoxSucess>
       ) : (
         <>
-          <TitleComponent darkMode={!darkMode}>Fala comigo:</TitleComponent>
+          <TitleComponent darkMode={darkMode}>Fala comigo:</TitleComponent>
+          <TextComponent darkMode={darkMode}>Preencha os inputs abaixo para enviar um email pra mim :)</TextComponent>
+
           <br />
           <br />
           <br />

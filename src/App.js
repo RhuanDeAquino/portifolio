@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Form from './components/Form';
 import { useState } from 'react';
+import Projects from './components/Projects';
 
 const Content = styled.div`
   width: 100%;
@@ -23,7 +24,7 @@ const BoxContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: ${(props) => props.darkMode ? 'var(--body-color)' : 'var(--body-color-dark)'};
+  background: ${(props) => props.darkMode ? 'var(--body-color-dark)' : 'var(--body-color)'};
 
   > main {
   max-width: 1300px;
@@ -32,7 +33,7 @@ const BoxContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: ${(props) => props.darkMode ? 'var(--body-color)' : 'var(--body-color-dark)'};
+  background: ${(props) => props.darkMode ? 'var(--body-color-dark)' : 'var(--body-color)'};
 
   @media(max-width: 1024px) {
     width: 100%;
@@ -46,7 +47,7 @@ const BoxContent = styled.div`
 `
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   }
@@ -58,6 +59,7 @@ const App = () => {
         <main>
           <Slide darkMode={darkMode} />
           <More darkMode={darkMode} />
+          <Projects darkMode={darkMode} />
           <Form darkMode={darkMode} />
         </main>
         <Footer darkMode={darkMode} />
