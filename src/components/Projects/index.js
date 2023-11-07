@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import RAMProject from "../../assets/captura-page-rick-and-morty.png";
+import QuizProject from "../../assets/Captura de tela 2023-11-07 174044.png";
 
 import TitleComponent from '../Title';
 import TextComponent from "../Text"
@@ -79,6 +80,11 @@ const Projects = ({ darkMode }) => {
       title: "Api Rick and Morty",
       image: RAMProject,
       link: "https://willowy-conkies-ca8355.netlify.app"
+    },
+    {
+      title: "Quiz",
+      image: QuizProject,
+      link: "https://rainbow-griffin-6d0921.netlify.app"
     },
   ]
   return (
