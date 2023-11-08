@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import RAMProject from "../../assets/captura-page-rick-and-morty.png";
-import QuizProject from "../../assets/Captura de tela 2023-11-07 174044.png";
+import QuizProject from "../../assets/Captura de tela 2023-11-08 153121.png";
+import ToDoProject from "../../assets/Captura de tela 2023-11-08 144751.png";
+
 
 import TitleComponent from '../Title';
 import TextComponent from "../Text"
@@ -85,6 +87,11 @@ const Projects = ({ darkMode }) => {
       title: "Quiz",
       image: QuizProject,
       link: "https://rainbow-griffin-6d0921.netlify.app"
+    },
+    {
+      title: "Simple To-Do",
+      image: ToDoProject,
+      link: "https://quiet-empanada-fa6b23.netlify.app"
     },
   ]
   return (
