@@ -4,6 +4,7 @@ import RAMProject from "../../assets/captura-page-rick-and-morty.png";
 import QuizProject from "../../assets/Captura de tela 2023-11-08 153121.png";
 import ToDoProject from "../../assets/Captura de tela 2023-11-08 144751.png";
 import ChallengeMKT from "../../assets/Captura de tela 2023-11-15 175513.png";
+import MoneyNeyGame from "../../assets/Captura de tela 2023-11-15 192713.png";
 
 
 
@@ -98,7 +99,12 @@ const Projects = ({ darkMode }) => {
     {
       title: "Challenge MKT",
       image: ChallengeMKT,
-      link: "https://joyful-gnome-a30e54.netlify.app"
+      link: "https://incredible-narwhal-cd705f.netlify.app/"
+    },
+    {
+      title: "Game money Neymar",
+      image: MoneyNeyGame,
+      link: "https://famous-dasik-acc58a.netlify.app/"
     },
   ]
   return (
