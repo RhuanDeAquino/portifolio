@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import RAMProject from "../../assets/captura-page-rick-and-morty.png";
 import QuizProject from "../../assets/Captura de tela 2023-11-08 153121.png";
 import ToDoProject from "../../assets/Captura de tela 2023-11-08 144751.png";
+import ChallengeMKT from "../../assets/Captura de tela 2023-11-15 175513.png";
+
 
 
 import TitleComponent from '../Title';
@@ -92,6 +94,11 @@ const Projects = ({ darkMode }) => {
       title: "Simple To-Do",
       image: ToDoProject,
       link: "https://quiet-empanada-fa6b23.netlify.app"
+    },
+    {
+      title: "Challenge MKT",
+      image: ChallengeMKT,
+      link: "https://joyful-gnome-a30e54.netlify.app"
     },
   ]
   return (
